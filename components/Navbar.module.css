@@ -1,0 +1,60 @@
+/* components/Navbar.module.css */
+.navbar {
+  width: 100%;
+  max-width: 1440px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  background-color:#e5ceae94;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.258);
+  box-sizing: border-box;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  margin: 0 auto; /* Centrar el contenido en pantallas grandes */
+}
+
+/* Clase para el título */
+.title {
+  font-size: 24px; /* Tamaño del texto un poco más grande para destacarlo */
+  font-weight: bold; /* Negrita para darle más importancia */
+  color: #212121; /* Un color gris oscuro para mejor legibilidad */
+  margin: 0;
+  padding: 10px 0; /* Espaciado superior e inferior para separar el título */
+  text-align: center; /* Centra el texto */
+  letter-spacing: 0.5px; /* Espaciado entre letras para una mejor lectura */
+   /* Convierte el texto a mayúsculas para un estilo más llamativo */
+}
+
+
+/* Responsividad */
+
+/* Ajuste de la altura y padding para diferentes dispositivos */
+@media (max-width: 992px) {
+  .navbar {
+    height: 55px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 50px;
+    padding: 0 5px;
+  }
+
+  .title {
+    font-size: 18px; /* Ajustar tamaño del texto */
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    height: 45px;
+    padding: 0 5px;
+  }
+
+  .title {
+    font-size: 16px; /* Ajustar tamaño del texto */
+  }
+}

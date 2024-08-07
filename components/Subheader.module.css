@@ -1,0 +1,74 @@
+/* components/Subheader.module.css */
+.subheader {
+  width: 100%; /* Cambiado a 100% para ser responsivo */
+  max-width: 1500px; /* Opcional: establecer un máximo ancho */
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e5ceae70;
+  padding: 0 20px;
+  box-sizing: border-box; /* Asegurar que el padding se incluya en el ancho */
+  margin: 0 auto; /* Centrar en pantallas grandes */
+  
+  /* Nuevas propiedades */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 4px; /* Borde redondeado leve */
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #a2a2a2;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.arrow {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.backText {
+  font-size: 16px; /* Mismo tamaño que el botón */
+}
+
+.editButton {
+  background-color: #a21000;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.editButton:hover {
+  background-color: #960000;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .subheader {
+    height: 50px;
+    padding: 0 10px;
+  }
+
+  .backButton {
+    font-size: 14px;
+  }
+
+  .arrow {
+    font-size: 18px;
+  }
+
+  .backText {
+    font-size: 14px;
+  }
+
+  .editButton {
+    margin-right: 20px;
+  }
+}
