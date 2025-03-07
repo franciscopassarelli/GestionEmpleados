@@ -1,22 +1,66 @@
-# Project Management Platform
+# Sistema de Gestión de Empleados
 
-Este es un desafío frontend que consiste en desarrollar una plataforma de gestión de proyectos utilizando **Next.js**. La aplicación permite a los usuarios crear, editar, eliminar y visualizar proyectos de manera eficiente.
+Este es un desafío de desarrollo **frontend** y **backend**, en el cual se tiene que gestionar la información de empleados en una plataforma sencilla, utilizando tecnologías modernas como **Next.js**, **React**, y **MySQL**. La aplicación está diseñada para ser eficiente y permitir la gestión completa de los empleados desde un formulario de alta, hasta la edición y eliminación de registros.
 
-## Características
+## Descripción del Proyecto
 
-- **Crear Proyecto:** Los usuarios pueden crear nuevos proyectos completando un formulario con los detalles necesarios.
-- **Editar Proyecto:** Se puede modificar la información de los proyectos existentes.
-- **Eliminar Proyecto:** Los usuarios pueden eliminar proyectos de la lista.
-- **Listado de Proyectos:** La plataforma muestra un listado de todos los proyectos creados con opciones de búsqueda y paginación.
-- **Validación de Formularios:** Se implementan validaciones para asegurar que la información ingresada sea correcta.
-- **Interfaz Adaptativa:** El diseño es responsive y se adapta a diferentes tamaños de pantalla.
+Este proyecto permite gestionar la información de empleados a través de un sistema que incluye funcionalidades de alta, edición, eliminación y visualización de registros. Se ha implementado tanto un **backend** en **Next.js** como un **frontend** en el mismo framework, asegurando una integración fluida entre la interfaz de usuario y la base de datos. La aplicación es completamente **responsive**, adaptándose a diferentes tamaños de pantalla.
+
+## Funcionalidades
+
+- **Alta de Empleados**: Los usuarios pueden registrar nuevos empleados completando un formulario con los siguientes datos:
+  - Nombre Completo
+  - Documento de Identidad
+  - Fecha de Nacimiento
+  - Estado de Desarrollador (Sí/No)
+  - Descripción breve
+
+- **Listado de Empleados**: Los usuarios pueden visualizar todos los empleados dados de alta en la plataforma. Los datos se muestran en una lista **paginada** y **filtrable**.
+
+- **Editar Empleado**: Los usuarios pueden editar la información de cualquier empleado registrado en el sistema.
+
+- **Eliminar Empleado**: Los usuarios pueden eliminar empleados de la lista.
+
+- **Validación de Formularios**: Se implementan validaciones para asegurar que la información ingresada sea correcta y completa.
+
+- **Interfaz Adaptativa**: El diseño es **responsive** y se adapta a diferentes tamaños de pantalla, proporcionando una experiencia óptima en dispositivos móviles y escritorios.
 
 ## Tecnologías Utilizadas
 
-- **Next.js:** Framework para aplicaciones React con soporte para renderizado del lado del servidor.
-- **React:** Librería de JavaScript para construir interfaces de usuario.
-- **CSS Modules:** Estilos modularizados y específicos para cada componente.
-- **JavaScript (ES6+):** Para la lógica de la aplicación.
-- **HTML5:** Estructura de las páginas web.
-- **Vercel:** Despliegue de la aplicación (si lo estás utilizando para el hosting).
+- **Next.js**: Framework para aplicaciones React con soporte para renderizado del lado del servidor (SSR) y generación de aplicaciones estáticas.
+- **React**: Librería de JavaScript para construir interfaces de usuario interactivas.
+- **MySQL**: Base de datos relacional para almacenar los datos de los empleados.
+- **Node.js**: Entorno de ejecución para el servidor backend.
+- **CSS Modules**: Estilos modularizados y específicos para cada componente de la aplicación.
+- **JavaScript (ES6+)**: Lenguaje para la lógica de la aplicación.
+- **Vercel**: Hosting para el despliegue de la aplicación (si se utiliza).
+- **API RESTful**: Para manejar las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) de los empleados.
 
+## Estructura del Proyecto
+
+### Backend (API REST):
+
+**API Endpoints**:
+- `POST /api/empleados`: Para crear un nuevo empleado.
+- `GET /api/empleados`: Para obtener el listado de empleados.
+- `PUT /api/empleados/:id`: Para actualizar los datos de un empleado existente.
+- `DELETE /api/empleados/:id`: Para eliminar un empleado.
+
+**Base de datos**:
+La base de datos **MySQL** contiene una tabla `empleados` con las siguientes columnas:
+- `id`: Identificador único del empleado.
+- `fullName`: Nombre completo del empleado.
+- `idNumber`: Documento de identidad del empleado.
+- `birthDate`: Fecha de nacimiento del empleado.
+- `isDeveloper`: Indicador de si el empleado es desarrollador.
+- `description`: Breve descripción sobre el empleado.
+
+### Frontend:
+
+**Páginas**:
+- **Agregar Empleado**: Formulario para ingresar los datos de un nuevo empleado.
+- **Lista de Empleados**: Visualiza la lista de empleados con opciones para editar y eliminar.
+
+**Componentes**:
+- **Formulario de alta de empleado**: Para ingresar los datos del nuevo empleado.
+- **Listado de empleados**: Muestra todos los empleados registrados, con opciones de búsqueda, edición y eliminación.
