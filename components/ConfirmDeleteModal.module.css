@@ -1,67 +1,93 @@
 /* components/ConfirmDeleteModal.module.css */
+
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #1c2a38; /* Fondo oscuro azul para el modal */
+  color: #fff; /* Texto blanco */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra sutil para dar profundidad */
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #f1f1f1; /* Blanco suave para el título */
+}
+
+.message {
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ccc; /* Gris claro para el mensaje */
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancelButton,
+.confirmButton {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 48%; /* Ambos botones ocupan el mismo espacio */
+}
+
+.cancelButton {
+  background-color: #7b8b8f; /* Gris oscuro para el botón de cancelar */
+  color: #fff;
+}
+
+.cancelButton:hover {
+  background-color: #5f7074; /* Gris más oscuro al hacer hover */
+}
+
+.confirmButton {
+  background-color: #435578; /* Rojo suave para el botón de eliminar */
+  color: #fff;
+}
+
+.confirmButton:hover {
+  background-color: #7a1e1e; /* Rojo más oscuro al hacer hover */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
   .modal {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-  } 
-  
+    padding: 15px;
+    width: 90%; /* Modal más pequeño en pantallas pequeñas */
+  }
+
   .title {
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-    color: #333;
+    font-size: 22px; /* Ajustar tamaño del título */
   }
-  
+
   .message {
-    margin-bottom: 20px;
-    font-size: 1rem;
-    color: #666;
+    font-size: 14px; /* Ajustar tamaño del mensaje */
   }
-  
-  .buttons {
-    display: flex;
-    justify-content: space-between;
+
+  .cancelButton, .confirmButton {
+    font-size: 14px; /* Ajustar tamaño de fuente en los botones */
   }
-  
-  .cancelButton {
-    background-color: #ccc;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .cancelButton:hover {
-    background-color: #bbb;
-  }
-  
-  .confirmButton {
-    background-color: #d9534f;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .confirmButton:hover {
-    background-color: #c9302c;
-  }
-  
+}

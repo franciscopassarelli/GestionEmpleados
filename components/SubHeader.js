@@ -13,10 +13,10 @@ export default function Subheader() {
     <div className={styles.subheader}>
       <button className={styles.backButton} onClick={handleBackClick}>
         <span className={styles.arrow}>←</span>
-        <span className={styles.backText}>Back</span>
+        <span className={styles.backText}>Volver</span>
       </button>
-      <Link href="/add-project" className={styles.editButton}>
-        + Add project
+      <Link href="/AddEmployee" className={styles.editButton}>
+        Agregar empleado
       </Link>
     </div>
   );

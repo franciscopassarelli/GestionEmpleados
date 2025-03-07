@@ -1,94 +1,118 @@
 /* styles/Home.module.css */
+
+/* Contenedor principal */
 .container {
-  max-width: 90%;
-  margin: 0 auto;
-  padding: 15px;
-  text-align: center;
-  background-color: #e1e1e1;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.281);
+  max-width: 350px; /* Reducir el ancho del formulario */
+  margin: 30px auto; /* Separación desde el top */
+  padding: 20px 18px; /* Menos padding para hacerlo más compacto */
+  background-color: #1f2a36; /* Fondo oscuro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más sutil */
+  color: #fff; /* Texto blanco para contraste */
+  font-family: 'Arial', sans-serif;
 }
 
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif; /* Usa Roboto como la fuente principal */
-}
-main {
-  margin-top: 20px; /* Ajusta el valor según sea necesario */
-}
-
-
-
+/* Título */
 h1 {
-  margin-bottom: 15px;
-  font-size: 1.5rem;
+  font-size: 24px; /* Reducir tamaño del título */
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase; /* Mayúsculas para mayor estilo */
+  letter-spacing: 1.2px;
+  color: #6c7c89; /* Gris suave */
 }
 
+/* Grupo de Inputs */
 .input-group {
-  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 15px; /* Espacio más reducido entre campos */
 }
 
+/* Etiquetas de los Inputs */
 .input-group label {
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-size: 16px; /* Tamaño de las etiquetas más pequeño */
+  font-weight: 500;
+  color: #a0a7b1; /* Gris claro */
+  margin-bottom: 6px; /* Menos margen entre etiqueta y campo */
   text-align: left;
 }
 
+/* Estilos para los inputs y selects */
 .input-group input,
 .input-group select {
-  padding: 8px;
-  font-size: 0.875rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
+  padding: 10px 12px; /* Reducción de padding para hacerlo más pequeño */
+  margin-bottom: 12px; /* Espaciado reducido entre campos */
+  border: 2px solid #444e59; /* Bordes más oscuros */
+  border-radius: 6px; /* Bordes más redondeados */
+  font-size: 14px; /* Tamaño de texto adecuado para el formulario pequeño */
+  background-color: #2a3a48; /* Fondo oscuro para los campos */
+  color: #f0f0f0; /* Texto blanco para contraste */
+  transition: border-color 0.3s, background-color 0.3s; /* Suavizado de transición */
 }
 
+/* Enfoque de los inputs */
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #4d6b8b; /* Borde en foco */
+  outline: none; /* Eliminar contorno */
+  background-color: #1e2d39; /* Fondo ligeramente más oscuro */
+}
+
+/* Botón de acción */
 .input-group button {
-  padding: 10px 15px;
-  margin-top: 10px;
-  border: none;
-  background-color: #7b0000;
+  padding: 10px 15px; /* Botón más pequeño */
+  font-size: 16px;
+  font-weight: 600;
   color: #fff;
-  border-radius: 4px;
+  background-color: #3a566e; /* Azul oscuro */
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 0.875rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
 }
 
+/* Efecto de hover sobre el botón */
 .input-group button:hover {
-  background-color: #a10000;
+  background-color: #314856; /* Azul más oscuro en hover */
+  transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
 }
 
+/* Efecto al presionar el botón */
+.input-group button:active {
+  transform: translateY(1px); /* Ligeramente hacia abajo cuando se presiona */
+}
+
+/* Lista de proyectos */
 .project-list {
   list-style: none;
   padding: 0;
 }
 
 .project-list li {
-  padding: 10px;
-  margin: 5px 0;
+  padding: 8px;
+  margin: 4px 0;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  color: #333; /* Texto más oscuro */
 }
 
 .project-list li strong {
-  font-size: 1rem;
-  margin-bottom: 5px;
+  font-size: 1.125rem;
+  margin-bottom: 6px;
 }
 
+/* Grupo de botones */
 .button-group {
   display: flex;
   gap: 5px;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .edit-button {
@@ -96,59 +120,36 @@ h1 {
   border: none;
   font-size: 1rem;
   cursor: pointer;
+  color: #6c7c89; /* Gris suave */
 }
 
 .edit-button:hover {
-  color: #a10000;
-}
-
-button {
-  padding: 8px 12px;
-  border: none;
-  background-color: #a21000;
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.875rem;
-}
-
-button:hover {
-  background-color: #000000;
+  color: #244658;
 }
 
 /* Responsive Design */
-@media (min-width: 600px) {
+@media (max-width: 768px) {
   .container {
-    max-width: 600px;
-    padding: 20px;
+    max-width: 100%; /* Adaptar al 100% del ancho */
+    padding: 18px; /* Menos padding en pantallas pequeñas */
+  }
+
+  h1 {
+    font-size: 22px; /* Ajustar el tamaño del título */
+    margin-bottom: 15px;
+  }
+
+  .input-group label {
+    font-size: 14px; /* Reducir tamaño de las etiquetas */
   }
 
   .input-group input,
   .input-group select {
-    font-size: 1rem;
+    font-size: 13px; /* Reducir tamaño de los inputs */
   }
 
   .input-group button {
-    font-size: 1rem;
-  }
-
-  .project-list li strong {
-    font-size: 1.125rem;
-  }
-
-  .edit-button {
-    font-size: 1.25rem;
-  }
-
-  button {
-    font-size: 1rem;
+    padding: 10px 14px; /* Botón más compacto */
+    font-size: 15px; /* Reducir tamaño de fuente */
   }
 }
-
-
-
-
-
-
-
-

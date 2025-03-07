@@ -1,5 +1,7 @@
-/* Estilo base */
-.container {
+/* MyEmployee.module.css */
+
+/* Contenedor principal del componente */
+.myEmployeeContainer {
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -9,7 +11,8 @@
   position: relative;
 }
 
-.title {
+/* Título de la sección */
+.myEmployeeTitle {
   font-size: 2.5rem;
   color: #333;
   text-align: center;
@@ -21,7 +24,8 @@
   padding-bottom: 10px;
 }
 
-.noProjects {
+/* Mensaje cuando no hay empleados */
+.noEmployeesMessage {
   font-size: 1.25rem;
   color: #777;
   text-align: center;
@@ -32,7 +36,8 @@
   border-radius: 8px;
 }
 
-.projectTable {
+/* Tabla de empleados */
+.employeeTable {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
@@ -41,30 +46,31 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-.projectTable thead tr {
+.employeeTable thead tr {
   background-color: #2e2e2e;
   color: #ffffff;
   text-align: left;
   font-weight: bold;
 }
 
-.projectTable th, .projectTable td {
+.employeeTable th, .employeeTable td {
   padding: 12px 15px;
   border: 1px solid #ddd;
 }
 
-.projectTable tbody tr {
+.employeeTable tbody tr {
   border-bottom: 1px solid #ddd;
 }
 
-.projectTable tbody tr:nth-of-type(even) {
+.employeeTable tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
 }
 
-.projectTable tbody tr:last-of-type {
+.employeeTable tbody tr:last-of-type {
   border-bottom: 2px solid #009879;
 }
 
+/* Estilos para la celda de acciones */
 .actionCell {
   position: relative;
 }
@@ -86,6 +92,7 @@
   color: #333;
 }
 
+/* Menú desplegable de acciones */
 .dropdownMenu {
   position: absolute;
   top: -15px;
@@ -111,6 +118,7 @@
   border-color: transparent #ddd transparent transparent;
 }
 
+/* Botones para editar y eliminar */
 .editButton, .deleteButton {
   display: flex;
   align-items: center;
@@ -145,20 +153,20 @@
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
-  .container {
+  .myEmployeeContainer {
     padding: 15px;
   }
 
-  .title {
+  .myEmployeeTitle {
     font-size: 1.5rem;
   }
 
-  .projectTable {
+  .employeeTable {
     font-size: 0.875rem;
     overflow-x: auto;
   }
 
-  .projectTable th, .projectTable td {
+  .employeeTable th, .employeeTable td {
     padding: 8px 10px;
   }
 
@@ -177,20 +185,20 @@
 }
 
 @media (max-width: 480px) {
-  .container {
+  .myEmployeeContainer {
     padding: 10px;
   }
 
-  .title {
+  .myEmployeeTitle {
     font-size: 1.25rem;
   }
 
-  .projectTable {
+  .employeeTable {
     font-size: 0.75rem;
     overflow-x: auto;
   }
 
-  .projectTable th, .projectTable td {
+  .employeeTable th, .employeeTable td {
     padding: 6px 8px;
   }
 
@@ -207,16 +215,16 @@
     display: none;
   }
 
-  /* Transforma la tabla en lista en pantallas muy pequeñas */
-  .projectTable, .projectTable thead, .projectTable tbody, .projectTable th, .projectTable td, .projectTable tr {
+  /* Transformar la tabla en lista en pantallas pequeñas */
+  .employeeTable, .employeeTable thead, .employeeTable tbody, .employeeTable th, .employeeTable td, .employeeTable tr {
     display: block;
   }
 
-  .projectTable tr {
+  .employeeTable tr {
     margin-bottom: 15px;
   }
 
-  .projectTable td {
+  .employeeTable td {
     text-align: right;
     padding-left: 50%;
     position: relative;
@@ -224,7 +232,7 @@
     border-bottom: 1px solid #ddd;
   }
 
-  .projectTable td::before {
+  .employeeTable td::before {
     content: attr(data-label);
     position: absolute;
     left: 10px;
@@ -234,12 +242,12 @@
     font-weight: bold;
   }
 
-  .projectTable td:last-child {
+  .employeeTable td:last-child {
     border-bottom: none;
   }
 
-  /* Oculta el thead en pantallas pequeñas para evitar duplicación */
-  .projectTable thead {
+  /* Ocultar el thead en pantallas pequeñas */
+  .employeeTable thead {
     display: none;
   }
 }

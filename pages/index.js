@@ -5,30 +5,30 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h1 className={styles.title}>Welcome to Our Project Management System</h1>
-        <p className={styles.subtitle}>Organize, manage, and control all your projects efficiently.</p>
+        <h1 className={styles.title}>Bienvenido a Nuestro Sistema de Gestión de Empleados</h1>
+        <p className={styles.subtitle}>Gestiona y organiza tu equipo de manera eficiente y fácil.</p>
       </header>
       <section className={styles.features}>
         <div className={styles.feature}>
-          <h2 className={styles.featureTitle}>Create Projects</h2>
-          <p className={styles.featureDescription}>Add new projects with complete details and start managing them from the get-go.</p>
+          <h2 className={styles.featureTitle}>Crear Empleados</h2>
+          <p className={styles.featureDescription}>Añade nuevos empleados con sus detalles y empieza a gestionarlos de inmediato.</p>
         </div>
         <div className={styles.feature}>
-          <h2 className={styles.featureTitle}>Edit and Manage</h2>
-          <p className={styles.featureDescription}>Modify the details of your projects and adjust their status as needed.</p>
+          <h2 className={styles.featureTitle}>Editar y Gestionar</h2>
+          <p className={styles.featureDescription}>Actualiza la información de los empleados y modifica sus roles según sea necesario.</p>
         </div>
         <div className={styles.feature}>
-          <h2 className={styles.featureTitle}>Delete Projects</h2>
-          <p className={styles.featureDescription}>Easily remove obsolete projects and keep your list updated.</p>
+          <h2 className={styles.featureTitle}>Eliminar Empleados</h2>
+          <p className={styles.featureDescription}>Elimina fácilmente a los empleados que ya no forman parte de tu equipo.</p>
         </div>
       </section>
       <section className={styles.cta}>
-        <Link href="/my-project" className={styles.button}>
-          Go to My Projects
+        <Link href="/MyEmployee" className={styles.button}>
+          Lista de empleados
         </Link>
       </section>
       <footer className={styles.footer}>
-        <p className={styles.footerText}>© 2024 Esto Es. All rights reserved.</p>
+        <p className={styles.footerText}>© 2025 gestion.empleados</p>
       </footer>
     </div>
   );

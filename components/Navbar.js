@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <Link href="/">
-        <h1 className={styles.title}>Project Management System</h1>
+        <h1 className={styles.title}>Sistema gestión empleados</h1>
       </Link>
     </nav>
   );
