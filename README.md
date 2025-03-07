@@ -1,7 +1,7 @@
 # Sistema de Gestión de Empleados
 
 Este es un desafío de desarrollo **frontend** y **backend**, en el cual se tiene que gestionar la información de empleados en una plataforma sencilla, utilizando tecnologías modernas como **Next.js**, **React**, y **MySQL**. La aplicación está diseñada para ser eficiente y permitir la gestión completa de los empleados desde un formulario de alta, hasta la edición y eliminación de registros.
-Este proyecto me demoró un total de 14 hs estimado entre rutas, front y el mayor tiempo en el backend al utilizár MySql.
+Este proyecto me demoró un total de 14 hs estimado entre rutas, front y el mayor tiempo en el backend al utilizar MySql.
 
 ## Descripción del Proyecto
 
