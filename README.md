@@ -24,7 +24,7 @@ Este proyecto permite gestionar la información de empleados a través de un sis
 
 - **Validación de Formularios**: Se implementan validaciones para asegurar que la información ingresada sea correcta y completa.
 
-- **Interfaz Adaptativa**: El diseño es **responsive** y se adapta a diferentes tamaños de pantalla, proporcionando una experiencia óptima en dispositivos móviles y escritorios.
+- **Interfaz Adaptativa**: El diseño es **responsive** y se adapta a diferentes tamaños de pantalla.
 
 ## Tecnologías Utilizadas
 
@@ -34,7 +34,7 @@ Este proyecto permite gestionar la información de empleados a través de un sis
 - **Node.js**: Entorno de ejecución para el servidor backend.
 - **CSS Modules**: Estilos modularizados y específicos para cada componente de la aplicación.
 - **JavaScript (ES6+)**: Lenguaje para la lógica de la aplicación.
-- **Vercel**: Hosting para el despliegue de la aplicación (si se utiliza).
+- **Vercel**: Hosting para el despliegue de la aplicación (si se quiere utilizar).
 - **API RESTful**: Para manejar las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) de los empleados.
 
 ## Estructura del Proyecto
