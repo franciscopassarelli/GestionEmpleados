@@ -70,6 +70,10 @@ export default function MisEmpleados() {
     setMenuAbierto(menuAbierto === id ? null : id);
   };
 
+  const formatearFecha = (fecha) => {
+    return fecha.split('T')[0]; // Extrae solo la parte de la fecha (yyyy-mm-dd)
+  };
+
   return (
     <div className={styles.myEmployeeContainer}>
       <h1 className={styles.myEmployeeTitle}>Mis Empleados</h1>
@@ -92,7 +96,7 @@ export default function MisEmpleados() {
               <tr key={empleado.id}>
                 <td data-label="Nombre Completo">{empleado.fullName}</td>
                 <td data-label="Documento">{empleado.idNumber}</td>
-                <td data-label="Fecha de Nacimiento">{empleado.birthDate}</td>
+                <td data-label="Fecha de Nacimiento">{formatearFecha(empleado.birthDate)}</td>
                 <td data-label="Desarrollador">{empleado.isDeveloper ? 'Sí' : 'No'}</td>
                 <td data-label="Descripción">{empleado.description}</td>
                 <td data-label="Acciones" className={styles.actionCell}>

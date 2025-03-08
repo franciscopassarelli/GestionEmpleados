@@ -8,9 +8,9 @@ import Subheader from "@/components/SubHeader.js";
 function MyApp({ Component, pageProps }) {
   return (
     <>
+      <main>
       <Navbar />
       <Subheader/>
-      <main>
         <Component {...pageProps} />
       </main>
       

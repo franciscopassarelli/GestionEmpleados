@@ -52,6 +52,12 @@ export default function AgregarEmpleado() {
     setAlertas((prevAlertas) => prevAlertas.filter((_, i) => i !== index)); 
   };
 
+  const manejarCambioFecha = (e) => {
+ 
+    const fecha = e.target.value;
+    setNuevoEmpleado({ ...nuevoEmpleado, birthDate: fecha });
+  };
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Agregar Empleado</h1>
@@ -77,7 +83,7 @@ export default function AgregarEmpleado() {
           className={styles.input}
           type="date"
           value={nuevoEmpleado.birthDate}
-          onChange={(e) => setNuevoEmpleado({ ...nuevoEmpleado, birthDate: e.target.value })}
+          onChange={manejarCambioFecha}
           required
         />
         <label className={styles.label}>¿Es Desarrollador?</label>

@@ -24,6 +24,9 @@ export default function EditarEmpleado() {
           const response = await fetch(`/api/empleados/${id}`);
           if (response.ok) {
             const data = await response.json();
+            if (data.birthDate) {
+              data.birthDate = data.birthDate.split('T')[0];
+               }
             setEmpleado(data);
           } else {
             console.error('Error al obtener el empleado');
