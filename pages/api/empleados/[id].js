@@ -3,8 +3,6 @@ import pool from '@/lib/dbPool';
 export default function handler(req, res) {
   const { id } = req.query;
 
-  
-
   if (req.method === 'PUT') {
     const { fullName, idNumber, birthDate, isDeveloper, description } = req.body;
 

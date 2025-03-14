@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Alert from '../components/Alert';
 import styles from '../styles/AddEmployee.module.css';
+
 
 export default function AgregarEmpleado() {
   const [nuevoEmpleado, setNuevoEmpleado] = useState({
@@ -13,6 +14,7 @@ export default function AgregarEmpleado() {
   });
   const [alertas, setAlertas] = useState([]);
   const router = useRouter();
+
 
   const agregarEmpleado = async () => {
 
@@ -57,6 +59,8 @@ export default function AgregarEmpleado() {
     const fecha = e.target.value;
     setNuevoEmpleado({ ...nuevoEmpleado, birthDate: fecha });
   };
+
+
 
   return (
     <div className={styles.container}>
