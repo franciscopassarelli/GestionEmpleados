@@ -18,7 +18,8 @@ export default function EditarEmpleado() {
 
   useEffect(() => {
     if (id) {
-    
+      setCargando(true); // Mostramos "cargando" mientras se trae la info
+
       const obtenerEmpleado = async () => {
         try {
           const response = await fetch(`/api/empleados/${id}`);
@@ -26,13 +27,15 @@ export default function EditarEmpleado() {
             const data = await response.json();
             if (data.birthDate) {
               data.birthDate = data.birthDate.split('T')[0];
-               }
+            }
             setEmpleado(data);
           } else {
             console.error('Error al obtener el empleado');
           }
         } catch (error) {
           console.error('Error al obtener el empleado:', error);
+        } finally {
+          setCargando(false); // Ocultamos el mensaje de "cargando"
         }
       };
 
@@ -62,9 +65,7 @@ export default function EditarEmpleado() {
       });
 
       if (response.ok) {
-    
         setAlerta({ message: 'Empleado actualizado correctamente', type: 'success' });
-
         setTimeout(() => {
           router.push('/MyEmployee');
         }, 2000);
@@ -82,52 +83,55 @@ export default function EditarEmpleado() {
 
   return (
     <div className="container">
-      <form onSubmit={guardarEmpleado}>
-        <h1>Editar Empleado</h1>
-        <div className="input-group">
-          <label>Nombre Completo</label>
-          <input
-            type="text"
-            name="fullName"
-            value={empleado.fullName}
-            onChange={manejarCambio}
-            required
-          />
-          <label>Documento</label>
-          <input
-            type="text"
-            name="idNumber"
-            value={empleado.idNumber}
-            onChange={manejarCambio}
-            required
-          />
-          <label>Fecha de Nacimiento</label>
-          <input
-            type="date"
-            name="birthDate"
-            value={empleado.birthDate}
-            onChange={manejarCambio}
-            required
-          />
-          <label>¿Es Desarrollador?</label>
-          <input
-            type="checkbox"
-            name="isDeveloper"
-            checked={empleado.isDeveloper}
-            onChange={manejarCambio}
-          />
-          <label>Descripción</label>
-          <textarea
-            name="description"
-            value={empleado.description}
-            onChange={manejarCambio}
-            required
-          />
-          <button type="submit" disabled={cargando}>Guardar</button> 
-        </div>
-      </form>
+      {cargando ? (
+        <p>Cargando empleado...</p>
+      ) : (
+        <form onSubmit={guardarEmpleado}>
+          <h1>Editar Empleado</h1>
+          <div className="input-group">
+            <label>Nombre Completo</label>
+            <input
+              type="text"
+              name="fullName"
+              value={empleado.fullName}
+              onChange={manejarCambio}
+              required
+            />
+            <label>Documento</label>
+            <input
+              type="text"
+              name="idNumber"
+              value={empleado.idNumber}
+              onChange={manejarCambio}
+              required
+            />
+            <label>Fecha de Nacimiento</label>
+            <input
+              type="date"
+              name="birthDate"
+              value={empleado.birthDate}
+              onChange={manejarCambio}
+              required
+            />
+            <label>¿Es Desarrollador?</label>
+            <input
+              type="checkbox"
+              name="isDeveloper"
+              checked={empleado.isDeveloper}
+              onChange={manejarCambio}
+            />
+            <label>Descripción</label>
+            <textarea
+              name="description"
+              value={empleado.description}
+              onChange={manejarCambio}
+              required
+            />
+            <button type="submit" disabled={cargando}>Guardar</button> 
+          </div>
+        </form>
+      )}
 
-      
       {alerta && (
         <Alert 
           message={alerta.message} 

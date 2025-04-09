@@ -3,7 +3,22 @@ import pool from '@/lib/dbPool';
 export default function handler(req, res) {
   const { id } = req.query;
 
-  if (req.method === 'PUT') {
+  if (req.method === 'GET') {
+    const query = 'SELECT * FROM empleados WHERE id = ?';
+    pool.query(query, [id], (err, results) => {
+      if (err) {
+        console.error('Error al obtener el empleado:', err);
+        return res.status(500).json({ message: 'Error al obtener el empleado' });
+      }
+
+      if (results.length === 0) {
+        return res.status(404).json({ message: 'Empleado no encontrado' });
+      }
+
+      res.status(200).json(results[0]);
+    });
+
+  } else if (req.method === 'PUT') {
     const { fullName, idNumber, birthDate, isDeveloper, description } = req.body;
 
     const query = `
@@ -26,9 +41,7 @@ export default function handler(req, res) {
       res.status(200).json({ message: 'Empleado actualizado con éxito' });
     });
 
-
   } else if (req.method === 'DELETE') {
-  
     const query = `DELETE FROM empleados WHERE id = ?`;
     const values = [id];
 
@@ -45,8 +58,6 @@ export default function handler(req, res) {
       res.status(200).json({ message: 'Empleado eliminado con éxito' });
     });
   } else {
-  
     res.status(405).json({ message: 'Método no permitido' });
   }
 }
-
